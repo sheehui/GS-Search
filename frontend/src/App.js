@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { KendraClient, QueryCommand } from "@aws-sdk/client-kendra"; 
-import { useEffect } from "react";
+import { Result } from "./Result.js";
+import SearchBar from "./SearchBar"
+import { DrawerAppBar } from './NavBar';
 
 async function hi() {
   console.log('hi');
@@ -25,18 +27,10 @@ async function hi() {
 
 function App() {
   // a client can be shared by different commands.
-
-  useEffect(() => {
-    const bye = async () => {
-      await hi();
-    }
-
-    bye().catch(console.error);
-  }, []
-  )
-
+  hi();
   return (  
     <div className="App">
+      <DrawerAppBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -51,6 +45,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <Result link="#" title="title!" descr="description!" />
+        <SearchBar />
+      </body>
     </div>
   );
 }
