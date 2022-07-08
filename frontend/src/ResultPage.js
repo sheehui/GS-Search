@@ -1,14 +1,22 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+import {useLocation} from 'react-router-dom';
+
+import { NavBar } from './NavBar';
+import { Result } from './Result';
 
 export function ResultPage(props) {
+  const location = useLocation();
   return (
-    <div>
+    <>
+        <header>
+          <NavBar />
+        </header>
+        <body >
+          <Container maxWidth="lg" >
+            <Result link="#" title={location.state.title} descr="description!" />
+          </Container>
+        </body>
         
-    </div>
+    </>
   );
 }
