@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchBar.css"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { QueryCommand } from "@aws-sdk/client-kendra"; 
 import { useNavigate } from "react-router-dom";
 
@@ -22,13 +22,13 @@ function SearchBar(props) {
         const query = {
             IndexId: "58426b77-30be-4b78-8240-13017bb7f40c",
             QueryText: input,
-            PageNumber: 1
+            PageSize: 50
         };
         const resp = await sendCommand(query);
-        console.log(resp)
         
         navigate("/results", { state: {
-            response: resp
+            response: resp,
+            query: query
         } });
        
     }
