@@ -3,7 +3,7 @@ import './App.css';
 import { KendraClient, QueryCommand } from "@aws-sdk/client-kendra"; 
 import { Result } from "./Result.js";
 import SearchBar from "./SearchBar"
-import { DrawerAppBar } from './NavBar';
+import { NavBar } from './NavBar';
 
 async function hi() {
   console.log('hi');
@@ -30,7 +30,7 @@ function App() {
   hi();
   return (  
     <div className="App">
-      <DrawerAppBar />
+      <NavBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
