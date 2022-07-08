@@ -35,9 +35,9 @@ function SearchBar(props) {
     
     return (
         <form class="container" onSubmit={handleSearch}>
-            <h2 style={{color: "#749ac7"}}>GS Search</h2>
+            <h2 style={{color: "#749ac7", fontSize: "70px", marginBottom: "20px"}}>GS Search</h2>
             <input id="search-bar" type="search" placeholder="Search" onChange={e => setInput(e.target.value)} />
-            <button type="submit" class="buttons">I'm feeling lucky today!</button>
+            <button type="submit" class="buttons" style={{backgroundColor:"#D3D3D3"}}>I'm feeling lucky today!</button>
         </form>
     )
 }

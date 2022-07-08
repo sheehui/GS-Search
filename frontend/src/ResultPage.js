@@ -3,7 +3,9 @@ import Container from '@mui/material/Container';
 import {useLocation} from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
+import {ThemeProvider} from '@mui/material/styles';
 
+import { theme } from './Theme';
 import { NavBar } from './NavBar';
 import { Result } from './Result';
 
@@ -75,7 +77,18 @@ export function ResultPage(props) {
             {!loading && dataDisplay.map((resp, i) => {
               return <Result key={i} link={resp.DocumentURI} title={resp.DocumentTitle.Text} descr={resp.DocumentExcerpt.Text} />
             })}
-            <Pagination onChange={handleChange} page={page} count={Math.ceil(response["ResultItems"].length / 10)} variant="outlined" color="primary" />
+            <ThemeProvider theme={theme}>
+              <Pagination onChange={handleChange} page={page} 
+                count={Math.ceil(response["ResultItems"].length / 10)} 
+                color="primary"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "20px"
+                }} 
+                onFocus
+                />
+            </ThemeProvider>
           </Container>
         </body>
     </>

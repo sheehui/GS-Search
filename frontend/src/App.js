@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import { KendraClient } from "@aws-sdk/client-kendra"; 
-import { Result } from "./Result.js";
 import SearchBar from "./SearchBar"
 import { NavBar } from './NavBar';
 import { useState, useEffect } from "react"
@@ -32,7 +30,11 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <body>
+      <body style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
         <SearchBar client={client} />
       </body>
     </div >
