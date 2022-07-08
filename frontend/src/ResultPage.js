@@ -14,7 +14,7 @@ function sliceResponse(pageNum, results) {
     return null;
   }
   const start = (pageNum - 1) * 10;
-  const endExclusive = Math.min(32, (pageNum) * 10);
+  const endExclusive = Math.min(results.length, (pageNum) * 10);
   const arr = [];
   console.log(start, endExclusive);
   for (var i = start; i < endExclusive; i++) {
@@ -75,7 +75,7 @@ export function ResultPage(props) {
             {!loading && dataDisplay.map((resp, i) => {
               return <Result key={i} link={resp.DocumentURI} title={resp.DocumentTitle.Text} descr={resp.DocumentExcerpt.Text} />
             })}
-            <Pagination onChange={handleChange} page={page} count={5} variant="outlined" color="primary" />
+            <Pagination onChange={handleChange} page={page} count={Math.ceil(response["ResultItems"].length / 10)} variant="outlined" color="primary" />
           </Container>
         </body>
     </>
