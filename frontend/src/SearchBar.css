@@ -1,13 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@600&display=swap');
+
+
+
+
 h2 {
-            
-            /* Styling for the geeksforgeeks
-            text on the page which is green
-            in color, centered and has the
-            font family of Arial */
-            color: #2f8d46;
-            text-align: center;
-            font-family: "Arial";
-        }
+    text-align: center;
+    font-family: 'Albert Sans', sans-serif;
+}
   
         #search-bar {
   
@@ -53,6 +52,10 @@ h2 {
   
             /* You can play with these values to
             get your desired shadow effect */
+        }
+
+        button:hover {
+            box-shadow: 0px 1px 3px rgb(192, 185, 185);
         }
   
         .buttons {
